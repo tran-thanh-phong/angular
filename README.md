@@ -9,6 +9,7 @@
 
 # Add a new component
 `ng generate component hello`
+`ng g c progress-bar`
 
 # Reference
 - https://github.com/angular-vietnam/100-days-of-angular/blob/master/Day001-Installation.md
