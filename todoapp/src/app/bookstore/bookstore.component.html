@@ -6,9 +6,11 @@
     <td>Notes</td>
   </thead>
   <tbody>
-    <tr  *ngFor="let author of authors; let idx = index; count as cnt; first as fst; last as lst; odd as odd; even as even;">
+    <!-- Class Binding -->
+    <tr [class.is-odd]="odd" *ngFor="let author of authors; let idx = index; count as cnt; first as fst; last as lst; odd as odd; even as even;">
       <td>{{author.id}}</td>
-      <td>{{author.firstName}} {{author.lastName}}</td>
+      <!-- Style Binding -->
+      <td [style.font-size]="author.fontSize">{{author.firstName}} {{author.lastName}}</td>
       <td>{{idx + 1}}/{{cnt}}</td>
     </tr>
   </tbody>

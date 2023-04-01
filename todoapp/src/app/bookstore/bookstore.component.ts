@@ -14,6 +14,7 @@ export class BookstoreComponent {
       email: 'ftwell0@phoca.cz',
       gender: 'Female',
       ipAddress: '99.180.237.33',
+      fontSize: '15px'
     },
     {
       id: 2,
@@ -22,6 +23,25 @@ export class BookstoreComponent {
       email: 'psigne1@berkeley.edu',
       gender: 'Female',
       ipAddress: '183.243.228.65',
+      fontSize: '13px'
+    },
+    {
+      id: 3,
+      firstName: 'Flora',
+      lastName: 'Twell',
+      email: 'ftwell0@phoca.cz',
+      gender: 'Female',
+      ipAddress: '99.180.237.33',
+      fontSize: '12px'
+    },
+    {
+      id: 4,
+      firstName: 'Priscella',
+      lastName: 'Signe',
+      email: 'psigne1@berkeley.edu',
+      gender: 'Female',
+      ipAddress: '183.243.228.65',
+      fontSize: '10px'
     },
     // more data
   ];
