@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class HelloComponent {
   user = {
     name: 'Pi',
-    age: 33
+    age: 12
   };
   sayHi(value: any) {
     alert('Hi ' + value + '! You have clicked on the button!');

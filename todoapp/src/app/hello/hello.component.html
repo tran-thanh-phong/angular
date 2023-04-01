@@ -12,3 +12,20 @@
 
 <!-- Two-way Binding -->
 
+<!-- ngif -->
+<div *ngIf="user.age >= 13">You can see this 13+ film.</div>
+
+<ng-container *ngIf="user.age < 13">
+  <p>You cannot see this 13+ film.</p>
+</ng-container>
+
+
+<div *ngIf="user.age >= 13; else noPG13">You can see this 13+ film.</div>
+
+<ng-template #noPG13>
+  <p>You cannot see this 13+ film.</p>
+</ng-template>
+
+<ng-template [ngIf]="user.age >= 13" [ngIfElse]="noPG13">
+  <p>You cannot see this 13+ film.</p>
+</ng-template>
