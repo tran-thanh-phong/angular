@@ -1,0 +1,6 @@
+<app-author-detail
+    *ngFor="let author of authors"
+    [author]="author"
+    (deleteAuthor)="handleDeleteAuthor($event)"
+  ></app-author-detail>
+<button (click)="reload()">Reload</button>
