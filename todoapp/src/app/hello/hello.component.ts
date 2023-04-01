@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./hello.component.scss']
 })
 export class HelloComponent {
-
+  user = {
+    name: 'Pi',
+    age: 33
+  };
+  sayHi(value: any) {
+    alert('Hi ' + value + '! You have clicked on the button!');
+  };
 }

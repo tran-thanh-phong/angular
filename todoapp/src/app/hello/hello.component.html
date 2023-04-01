@@ -1,1 +1,14 @@
-<p>hello works!</p>
+<!-- Interpolation -->
+<p>Hello {{user.name}}!</p>
+<p>Your age is {{user.age}}.</p>
+
+
+<!-- Property binding -->
+<p>Please input your name:</p>
+<input type="text" [value]="user.name" />
+
+<!-- Event Binding -->
+<button (click)="sayHi(user.name)">Say Hi!</button>
+
+<!-- Two-way Binding -->
+
