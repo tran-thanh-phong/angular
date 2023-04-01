@@ -1,0 +1,38 @@
+<p>-------------------------- ngFor ------------------------</p>
+<table>
+  <thead>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Notes</td>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let author of authors; let idx = index; count as cnt; first as fst; last as lst; odd as odd; even as even;">
+      <td>{{author.id}}</td>
+      <td>{{author.firstName}} {{author.lastName}}</td>
+      <td>{{idx + 1}}/{{cnt}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>-------------------------- ng-template + ngForOf ------------------------</p>
+<ng-template
+  ngFor
+  [ngForOf]="authors"
+  let-author
+  let-idx="index"
+  let-total="count"
+>
+  <div>
+    ({{idx}})/({{total}}): {{author.id}} - {{author.firstName}}
+    {{author.lastName}}
+  </div>
+</ng-template>
+
+<p>-------------------------- ngFor + ngIf + local variable ------------------------</p>
+<div *ngFor="let author of authors; index as idx, count as total, even as even">
+  <ng-container *ngIf="even">
+    <p>
+      ({{idx}})/({{total}}): {{author.id}} - {{author.firstName}}{{author.lastName}}
+    </p>
+  </ng-container>
+</div>
