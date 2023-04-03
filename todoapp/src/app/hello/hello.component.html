@@ -10,8 +10,12 @@
 <!-- Event Binding -->
 <button (click)="sayHi(user.name)">Say Hi!</button>
 
+<br/>
+  
 <!-- Two-way Binding -->
 <input type="text" [(ngModel)]="user.name" />
+
+<br/>
 
 <input type="text" [ngModel]="user.name" (ngModelChange)="user.name = $event" />
 

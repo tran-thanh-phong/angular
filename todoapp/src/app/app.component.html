@@ -371,9 +371,26 @@
   <app-author-list></app-author-list>
 
   <h2>Two-way binding</h2>
+
   <app-toggle
     [(checked)]="checked"
   ></app-toggle>
+
+  <button (click)="doSomething()">Toggle 1</button>
+
+  <br/>
+  <h2>Parent interacts with child via local variable</h2>
+  <button (click)="toggleComp.toggle()">Toggle 2</button>
+  <app-toggle #toggleComp></app-toggle>
+
+  <br/>
+  <h2>Parent class with ViewChild</h2>
+  <button (click)="toggleInside()">Toggle inside class</button>
+  <app-toggle #toggleComp2></app-toggle>
+
+  <h2>ViewChild with HTMLElement</h2>
+  <div #textContainer>Old</div>
+  <button (click)="setDivText()">Set Text</button>
 
   <!-- Resources -->
   <h2>Resources</h2>
