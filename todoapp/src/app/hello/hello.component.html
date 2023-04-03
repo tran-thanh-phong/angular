@@ -11,6 +11,9 @@
 <button (click)="sayHi(user.name)">Say Hi!</button>
 
 <!-- Two-way Binding -->
+<input type="text" [(ngModel)]="user.name" />
+
+<input type="text" [ngModel]="user.name" (ngModelChange)="user.name = $event" />
 
 <!-- ngif -->
 <div *ngIf="user.age >= 13">You can see this 13+ film.</div>
