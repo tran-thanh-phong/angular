@@ -33,4 +33,8 @@ export class AppComponent {
       this.textContainer.nativeElement.textContent = 'New';
     }
   }
+
+  checkChanges($event: any) {
+    console.log('checkChanges', $event);
+  }
 }

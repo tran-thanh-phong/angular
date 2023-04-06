@@ -381,7 +381,7 @@
   <br/>
   <h2>Parent interacts with child via local variable</h2>
   <button (click)="toggleComp.toggle()">Toggle 2</button>
-  <app-toggle #toggleComp></app-toggle>
+  <app-toggle #toggleComp (checkedChange)="checkChanges($event)"></app-toggle>
 
   <br/>
   <h2>Parent class with ViewChild</h2>
