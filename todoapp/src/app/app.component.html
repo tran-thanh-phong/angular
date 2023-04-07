@@ -392,6 +392,20 @@
   <div #textContainer>Old</div>
   <button (click)="setDivText()">Set Text</button>
 
+  <h2>ng-content</h2>
+  <app-toggle [(checked)]="questions.question1">Question 1</app-toggle>
+  <app-toggle [(checked)]="questions.question2">Question 2</app-toggle>
+
+  <h2>ng-content with selector</h2>
+  <app-toggle [(checked)]="questions.question1">Question 1
+    <h3 class="toogle-header">Header 1</h3>
+    <h3 class="toogle-header">Header 2</h3>
+    <label>Question 1</label>
+    <span>Some paragraph 1</span>
+    <p>Some paragraph 2</p>
+    <p ngProjectAs="label">Will be put inside the toggle-label</p>
+  </app-toggle>
+
   <!-- Resources -->
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>

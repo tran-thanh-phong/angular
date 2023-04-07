@@ -13,6 +13,11 @@ export class AppComponent {
   @ViewChild('textContainer') textContainer!: ElementRef<HTMLDivElement>;
   @ViewChildren(ToggleComponent) toggles!: QueryList<ToggleComponent>;
 
+  questions = {
+    question1: false,
+    question2: false
+  }
+
   ngAfterViewInit() {
     console.log(this.toggles);
   }

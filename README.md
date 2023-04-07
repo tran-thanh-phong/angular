@@ -6,6 +6,9 @@
 
 `ng serve`
 
+# Build 
+
+`ng build --watch`
 
 # Add a new component
 `ng generate component hello`

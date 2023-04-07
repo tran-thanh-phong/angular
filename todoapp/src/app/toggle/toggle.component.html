@@ -1,3 +1,14 @@
+<header>
+  <div>header 1 -> Will be generating...</div>
+  <ng-content select=".toogle-header"></ng-content>
+</header>
+
+<br/>
+
+<header>
+  <div>header 2</div>
+  <ng-content select=".toogle-header"></ng-content>
+</header>
 <div
   class="toggle-wrapper"
   [class.checked]="checked"
@@ -5,4 +16,37 @@
   (click)="toggle()"
 >
   <div class="toggle"></div>
+</div>
+
+<div class="toggle-label">
+  <div>Label only 1 -> Will be generating...</div>
+  <ng-content select="label"></ng-content>
+</div>
+
+<br/>
+
+<div class="toggle-label">
+  <div>Label only 2</div>
+  <ng-content select="label"></ng-content>
+</div>
+
+<br/>
+
+<div class="toggle-content">
+  <div>content 0</div>
+  <ng-content></ng-content>
+</div>
+
+<br/>
+
+<div class="toggle-content">
+  <div>content 1</div>
+  <ng-content></ng-content>
+</div>
+
+<br/>
+
+<div class="toggle-content">
+  <div>content 2 -> Will be generating...</div>
+  <ng-content></ng-content>
 </div>
