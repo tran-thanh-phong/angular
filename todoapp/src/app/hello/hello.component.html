@@ -11,7 +11,7 @@
 <button (click)="sayHi(user.name)">Say Hi!</button>
 
 <br/>
-  
+
 <!-- Two-way Binding -->
 <input type="text" [(ngModel)]="user.name" />
 
@@ -35,4 +35,25 @@
 
 <ng-template [ngIf]="user.age >= 13" [ngIfElse]="noPG13">
   <p>You cannot see this 13+ film.</p>
+</ng-template>
+
+<h3>ngTemplate & ngTemplateOutlet</h3>
+
+<div class="card">
+  <div class="card-header">
+    You have selected
+    <ng-container [ngTemplateOutlet]="counterTmp"></ng-container> items.
+  </div>
+  <div class="card-body">
+    There are <ng-container [ngTemplateOutlet]="counterTmp"></ng-container> items was
+    selected.
+  </div>
+  <div class="card-footer">
+    You have selected
+    <ng-container [ngTemplateOutlet]="counterTmp"></ng-container> items.
+  </div>
+</div>
+
+<ng-template #counterTmp>
+  <span class="badge badge-primary">{{ counter }}</span>
 </ng-template>

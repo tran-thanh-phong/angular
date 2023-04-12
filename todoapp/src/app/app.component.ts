@@ -18,6 +18,8 @@ export class AppComponent implements AfterViewInit, OnInit {
     question1: false,
     question2: false
   }
+  loginText: any;
+  signUpText: any;
 
   constructor() {
     console.log('constructor - toggleComp', this.toggleComp);
@@ -52,5 +54,12 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   checkChanges($event: any) {
     console.log('checkChanges', $event);
+  }
+
+  signUp() {
+    console.log('signUp');
+  }
+  login() {
+    console.log('login');
   }
 }

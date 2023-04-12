@@ -1,0 +1,25 @@
+<ng-template #defaultTabButtonsTmpl>
+  <div class="default-tab-buttons">...</div>
+</ng-template>
+<ng-container
+  *ngTemplateOutlet="headerTemplate || defaultTabButtons"
+></ng-container>
+
+<ng-template #buttonTmpl let-label let-className="className" let-icon="icon">
+  <button [ngClass]="['btn', className ? className : '']">
+    <i *ngIf="icon" class="fa {{icon}}"></i>
+    {{ label }}
+  </button>
+</ng-template>
+
+<ng-container
+  [ngTemplateOutlet]="buttonTmpl"
+  [ngTemplateOutletContext]="{ $implicit: 'Remove', className: 'btn-danger', icon: 'fa-remove' }"
+>
+</ng-container>
+
+
+<div
+  [ngTemplateOutlet]="buttonTmpl"
+  [ngTemplateOutletContext]="{ label: 'Click here', class: 'btn-primary', icon: null }"
+></div>

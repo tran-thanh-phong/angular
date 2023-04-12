@@ -1,0 +1,23 @@
+<ng-template
+  #buttonTmpl
+  let-label="label"
+  let-className="className"
+  let-icon="icon"
+>
+  <button [ngClass]="['btn', className ? className : '']">
+    <i *ngIf="icon" class="fa {{icon}}"></i>
+    {{ label }}
+  </button>
+</ng-template>
+
+<ng-container
+  [ngTemplateOutlet]="buttonTmpl"
+  [ngTemplateOutletContext]="{ label: 'Click here', className: 'btn-primary', icon: null }"
+>
+</ng-container>
+
+<ng-container
+  [ngTemplateOutlet]="buttonTmpl"
+  [ngTemplateOutletContext]="{ label: 'Remove', className: 'btn-danger', icon: 'fa-remove' }"
+>
+</ng-container>
