@@ -1,4 +1,4 @@
-import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ToggleComponent } from './toggle/toggle.component';
 
 @Component({
@@ -6,19 +6,30 @@ import { ToggleComponent } from './toggle/toggle.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit, OnInit {
   title = 'todoapp';
   checked: boolean = false;
-  @ViewChild('toggleComp2') toggleComp!: ToggleComponent;
-  @ViewChild('textContainer') textContainer!: ElementRef<HTMLDivElement>;
-  @ViewChildren(ToggleComponent) toggles!: QueryList<ToggleComponent>;
+  @ViewChild('toggleComp2', {static: true}) toggleComp!: ToggleComponent;
+  @ViewChild('toggleComp2', {static: true, read: ElementRef}) toggleCompHtml!: ElementRef<HTMLElement>;
+  @ViewChild('textContainer') textContainer?: ElementRef<HTMLDivElement>;
+  @ViewChildren(ToggleComponent) toggles?: QueryList<ToggleComponent>;
 
   questions = {
     question1: false,
     question2: false
   }
 
+  constructor() {
+    console.log('constructor - toggleComp', this.toggleComp);
+  }
+
+  ngOnInit(): void {
+    console.log('ngOnInit - toggleComp', this.toggleComp);
+    console.log('ngOnInit - toggleCompHtml', this.toggleCompHtml);
+  }
+
   ngAfterViewInit() {
+    console.log('ngAfterViewInit - toggleComp', this.toggleComp);
     console.log(this.toggles);
   }
 
@@ -32,10 +43,10 @@ export class AppComponent {
   }
 
   setDivText() {
-    if (this.textContainer.nativeElement.textContent === 'New') {
+    if (this.textContainer?.nativeElement.textContent === 'New') {
       this.textContainer.nativeElement.textContent = 'Old';
     } else {
-      this.textContainer.nativeElement.textContent = 'New';
+      this.textContainer?.nativeElement && (this.textContainer.nativeElement.textContent = 'New');
     }
   }
 
