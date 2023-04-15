@@ -12,6 +12,9 @@ import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { ToggleComponent } from './toggle/toggle.component';
 import { TabContainerComponent } from './tab-container/tab-container.component';
 import { ButtonComponent } from './button/button.component';
+import { PipeExampleComponent } from './PipeExample/pipe-example.component';
+import { AppTitlePipe } from './libs/app-title.pipe';
+import { IsAdultPipe } from './libs/pipes/is-adult.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { ButtonComponent } from './button/button.component';
     AuthorDetailComponent,
     ToggleComponent,
     TabContainerComponent,
-    ButtonComponent
+    ButtonComponent,
+    PipeExampleComponent,
+    AppTitlePipe,
+    IsAdultPipe
   ],
   imports: [
     BrowserModule,

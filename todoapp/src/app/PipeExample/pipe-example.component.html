@@ -1,0 +1,56 @@
+
+<table>
+  <thead>
+    <tr>
+      <td>Format</td>
+      <td>Value</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let format of dateFormats">
+      <td>{{format}}</td>
+      <td>{{ dob | date:format}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Set userId to empty string after {{ timer | async }} seconds, notice the text
+  "Edit" will be set to "Add"
+</p>
+<pre ngNonBindable>{{ userIdChangeAfterFiveSeconds | appTitle}}</pre>
+<div>Form title: {{ userIdChangeAfterFiveSeconds | appTitle}} User ({{userIdChangeAfterFiveSeconds}})</div>
+
+
+<div class="row">
+  <div class="col-xs-6">
+    <h4>Full user list</h4>
+    <div *ngFor="let user of users">{{ user.name }} - {{user.age}}</div>
+  </div>
+  <div class="col-xs-6">
+    <div class="ml-4">
+      <h4>Adult user list</h4>
+      <div *ngFor="let user of users | isAdult">{{ user.name }} - {{user.age}}</div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-6">
+    <h4>Name</h4>
+    <input type="text" [(ngModel)]="newUser.name" />
+  </div>
+  <div class="col-xs-6">
+    <h4>Age</h4>
+      <input type="number" [(ngModel)]="newUser.age" />
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6">
+    <button (click)="addUser()">Add</button>
+  </div>
+  <div class="col-xs-6">
+    <button (click)="addUser(false)">Add with update</button>
+  </div>
+</div>

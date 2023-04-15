@@ -18,6 +18,13 @@ export class AppComponent implements AfterViewInit, OnInit {
     question1: false,
     question2: false
   }
+
+  config = {
+    main: false,
+    tabGroup: false,
+    welcome: true
+  }
+
   loginText: any;
   signUpText: any;
 
